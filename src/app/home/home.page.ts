@@ -15,6 +15,13 @@ export class HomePage {
   constructor() {}
 
   ionViewDidEnter() {
+
+    const icon = L.icon({
+      iconUrl : 'assets/leaflet/marker-icon.png',
+      iconSize: [25, 41],
+
+
+    })
     // Initialize the map and set the view to a specific location
     this.map = L.map('mapId').setView([-7.770602, 110.377437], 13);
 
@@ -24,7 +31,7 @@ export class HomePage {
     }).addTo(this.map);
 
     // Create a marker at the specified location (UGM)
-    const marker = L.marker([-7.770602, 110.377437]).addTo(this.map);
+    const marker = L.marker([-7.770602, 110.377437], {icon}).addTo(this.map);
 
     // Bind a popup to the marker with some information
     marker.bindPopup('Universitas Gadjah Mada').openPopup();
