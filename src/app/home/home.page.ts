@@ -24,17 +24,11 @@ export class HomePage {
     }).addTo(this.map);
 
     // Create a marker at the specified location (UGM)
-const marker = L.marker([-7.770602, 110.377437]).addTo(this.map);
+    const marker = L.marker([-7.770602, 110.377437]).addTo(this.map);
 
-// Bind a popup to the marker with text and an image
-marker.bindPopup(`
-  <div style="text-align: center;">
-    <b>Universitas Gadjah Mada</b><br>
-    <img src="assets/icon/ugm.png" alt="UGM" width="100px">
-  </div>
-`).openPopup();
-
-  }*
+    // Bind a popup to the marker with some information
+    marker.bindPopup('Universitas Gadjah Mada').openPopup();
+  }
 
   onBasemapChange(event: any) {
     // Remove the current layer from the map
